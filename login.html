@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Contact Manager: Home</title>
+		<title>Contact Manager: Login</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="css/login.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
@@ -23,7 +24,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class ="active"><a href="">Home</a></li>
+		        <li><a href="index.html">Home</a></li>
 		      </ul>
 
 		      <!-- ======== SEARCH FOR CONTACT ========== -->
@@ -37,24 +38,24 @@
 
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="signUp.html">Sign Up</a></li>
-		        <li><a href="login.html">Login</a></li>
+		        <li class ="active"><a href="login.html">Login</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div id="homePageContent" class="homePageContent">
-						<h1>Contact Manager</h1>
-						<h3>An easy way to manage all your contacts</h3>
-						<hr>
-						<button class="btn btn-default btn-lg" onclick="location.href='signUp.html'">Get Started!</button>
-					</div>
+		<section class="loginPage">
+			<div class="inner">
+				<div id="loginDiv" class="loginDiv">
+					<h1>Login</h1>
+					<input id="username" class="usernameBox" type="text" placeholder=" Username" required> <br />
+					<input id="password" class="passwordBox" type="password" placeholder=" Password" required> <br />
+					<button id="loginButton" type="button" class="buttons" onclick="doLogin();"> Login </button>
+					<h3>New member? <a href="signUp.html"><strong>Sign Up</strong></a></h3>
+					<span id="loginResult"></span>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

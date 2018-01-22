@@ -25,59 +25,9 @@ html {
 }
 
 .homePageContent hr {
-	width: 500px;
+	width: 450px;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-
-.loginPage {
-	height: 100%;
-	width: 100%;
-	margin: auto;
-	background-image: url('../Images/NastuhBackground.jpg');
-	display: table;
-	top: 0;
-	background-size: cover;
-}
-
-.loginPage .inner {
-	display: table-cell;
-	vertical-align: middle;
-	width: 100%;
-	max-width: none;
-}
-
-.loginDiv {
-	max-width: 500px;
-	margin: 0 auto;
-	text-align: center;
-	border-radius: 25px;
-    background: #F9F3F4;
-    padding: 10px; 
-    width: 250px;
-    height: 350px;
-}
-
-.loginDiv h1{
-	font-family: 'Raleway', sans-serif;
-	color: #515151;
-	font-size: 300%;
-	text-shadow: 0px 0px 300px #000;
-}
-
-.usernameBox {
-	width: 200px;
-	height: 25px;
-	margin: 10px;
-	font-size: 100%;
-}
-
-.passwordBox {
-	width: 200px;
-	height: 25px;
-	margin: 10px;
-	font-size: 100%;
 }
 
 .buttons {
