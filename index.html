@@ -2,21 +2,83 @@
 <html>
 	<head>
 		<title>Contact Manager</title>
-		<link href="css/styles.css" rel="stylesheet">	
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 
-		<section class="loginPage">
+		<nav class="navbar navbar-default">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Contact Manager</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class ="active"><a href="">Home</a></li>
+		        <li><a href="">About</a></li>
+		      </ul>
+
+		      <!-- ======== SEARCH FOR CONTACT ========== -->
+<!-- 		      <form class="navbar-form navbar-left">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Search">
+		        </div>
+		        <button type="submit" class="btn btn-default">Submit</button>
+		      </form> -->
+		      <!-- ======== SEARCH FOR CONTACT ========== -->
+
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#">Sign Up</a></li>
+		        <li><a href="#">Login</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="homePageContent" class="homePageContent">
+						<h1>Contact Manager</h1>
+						<h3>An easy way to manage all your contacts</h3>
+						<hr>
+						<button class="btn btn-default btn-lg">Get Started!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <section class="loginPage">
 			<div class="inner">
 				<div id="loginDiv" class="loginDiv">
 					<h1>Log-in</h1>
-					<input id="username" class="usernameBox" type="text" placeholder="Username" required> <br />
-					<input id="password" class="passwordBox" type="password" placeholder="Password" required> <br />
-					<button id="loginButton" type="button" class="button" onclick="doLogin();"> login </button>
-					<!-- <span id="loginResult"></span> -->
+					<input id="username" class="usernameBox" type="text" placeholder=" Username" required> <br />
+					<input id="password" class="passwordBox" type="password" placeholder=" Password" required> <br />
+					<button id="loginButton" type="button" class="buttons" onclick="doLogin();"> Login </button>
+					<span id="loginResult"></span>
 				</div>
 			</div>
-		</section>
+		</section> -->
+
+<!-- 		<section class="homePage">
+			<div id="loggedInDiv" class="loggedInDiv">
+				<div id=""
+				<h2>Logged in as <span id="userName"></span></h2>
+				<button id="logoutButton" type="button" class="buttons" onclick="doLogout();"> Log Out </button>
+			</div>
+		</section> -->
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

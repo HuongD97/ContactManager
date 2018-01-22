@@ -1,11 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
+body {
+	background: url("https://images.unsplash.com/17/unsplash_525f012329589_1.JPG?auto=format&fit=crop&w=1512&q=80");
+	background-size: cover;
+	background-position: center;
 }
+
+html {
+	height: 100%;
+}
+
+.homePageContent {
+	text-align: center;
+	padding-top: 15%;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.homePageContent h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+.homePageContent hr {
+	width: 500px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
 
 .loginPage {
 	height: 100%;
@@ -56,16 +80,25 @@ html, body {
 	font-size: 100%;
 }
 
-.button {
+.buttons {
 	border-radius: 9px;
 	border: none;
 	font-family: 'Oswald', sans-serif;
 	background: #515151;
 	color: #F9F3F4;
-	font-size: 120%;
+	font-size: 100%;
 	text-decoration: none;
 	position: relative;
 	padding: 5px;
 	margin: 30px;
 	width: 100px;
+}
+
+.homePage {
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	background-image: url('../Images/NastuhBackgroundBlurred.jpg');
+	top: 0;
+	background-size: cover;
 }
