@@ -7,6 +7,13 @@ function viewContact(id){
         success: function(resp){
             alert(resp);
         },
-
     });
+}
+
+function addContact(){
+
+}
+
+function deleteContact(){
+    
 }
