@@ -1,71 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-}
-
-.loginPage {
-	height: 100%;
-	width: 100%;
-	margin: auto;
-	background-image: url('../Images/NastuhBackground.jpg');
-	display: table;
-	top: 0;
+body {
+	background: url("https://images.unsplash.com/17/unsplash_525f012329589_1.JPG?auto=format&fit=crop&w=1512&q=80");
 	background-size: cover;
+	background-position: center;
 }
 
-.loginPage .inner {
-	display: table-cell;
-	vertical-align: middle;
-	width: 100%;
-	max-width: none;
+html {
+	height: 100%;
 }
 
-.loginDiv {
-	max-width: 500px;
-	margin: 0 auto;
+.homePageContent {
 	text-align: center;
-	border-radius: 25px;
-    background: #F9F3F4;
-    padding: 10px; 
-    width: 250px;
-    height: 350px;
+	padding-top: 15%;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
 }
 
-.loginDiv h1{
-	font-family: 'Raleway', sans-serif;
-	color: #515151;
-	font-size: 300%;
-	text-shadow: 0px 0px 300px #000;
+.homePageContent h1 {
+	font-weight: 700;
+	font-size: 5em;
 }
 
-.usernameBox {
-	width: 200px;
-	height: 25px;
-	margin: 10px;
-	font-size: 100%;
+.homePageContent hr {
+	width: 450px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.passwordBox {
-	width: 200px;
-	height: 25px;
-	margin: 10px;
-	font-size: 100%;
-}
-
-.button {
+.buttons {
 	border-radius: 9px;
 	border: none;
 	font-family: 'Oswald', sans-serif;
 	background: #515151;
 	color: #F9F3F4;
-	font-size: 120%;
+	font-size: 100%;
 	text-decoration: none;
 	position: relative;
 	padding: 5px;
 	margin: 30px;
 	width: 100px;
+}
+
+.homePage {
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	background-image: url('../Images/NastuhBackgroundBlurred.jpg');
+	top: 0;
+	background-size: cover;
 }
