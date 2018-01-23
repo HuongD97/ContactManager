@@ -1,12 +1,13 @@
-
 <?php
-
-  if (isset($_GET['id']))
-    echo "success";
+  if (isset($_POST['id']))
+    echo '{"id":"'.$_POST['id'].'"}';
   else
     echo "fail whale :(";
 
     /*
+	Note: Confirm that the active user defined in the session is the owner of
+	the contact before deleteion (or any other modification in other files) is allowed
+
     $sql = "DELETE FROM (tablename) WHERE (what is passed in on Rachael's side)";
 
     if ($conn->query($sql) == TRUE)

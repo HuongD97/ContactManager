@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="/API/APIfront.js"></script>
+		<!--- Styles will be moved off into their own css file --->
+		<style>
+			.defaultHidden{display:none;visibility:hidden;}
+			aside{width:25%;float:left;}
+			section{width:75%;float:right;}
+			section *{display:block;width:200px;}
+			.contact{cursor:pointer;}
+		</style>
+	</head>
+	<body>
+		<div id="error" class="defaultHidden"></div>
+		<aside id="contactList">
+			<input id="searchInput" type="text" placeholder="Search Contacts"></input>
+<!---
+<?php
+	PHP CODE TO QUERY AND GET THE ACCOUNT'S CONTACTS
+
+	for each contact
+		echo "<div id=\"".record(id)."/" class=/"contact/">".record(name)."</div>"
+	end for
+--->
+			<div id="4221" class="contact">Adams, Douglas</div>
+			<div id="4232" class="contact">Gaiman, Neil</div>
+			<div id="4234" class="contact">Pratchett, Terry</div>
+<!---
+?>
+--->
+		</aside>
+		<section id="contactDisplay" class="defaultHidden">
+			<div id="nameRO" class="ROfield"></div>
+			<div id="phoneRO" class="ROfield"></div>
+			<div id="emailRO" class="ROfield"></div>
+			<input id="contactToggleAdd" type="button" value="Add A New Contact"></input>
+			<input id="contactDeleteSubmit" type="button" value="Delete Contact"></input>
+		</section>
+		<section id="contactAdd">
+			<input id="nameW" type="text" placeholder="Name"></input>
+			<input id="phoneW" type="phone" placeholder="Phone Number"></input>
+			<input id="emailW" type="email" placeholder="Email"></input>
+			<input id="contactAddSubmit" type="button" value="Save Contact"></input>
+		</section>
+
+		<!--- Scripts will be moved off into their own js file --->
+		<script>
+			// When you click on contacts, swap to the Read-Only form and show their info
+			$(".contact").on("click",function(){viewContact(this.id);});
+			// When you click 'Add A New Contact', show the add contact section
+			$("#contactToggleAdd").on("click",function(){$("section").toggleClass("defaultHidden");});
+			// When you click 'Delete Contact', remove the contact from the active page
+			$("#contactDeleteSubmit").on("click",function(){deleteContact($("#contactDisplay").attr("data-cid"))});
+
+			// Helper function for showing errors. This will likely change.
+			function showError(str){
+				$("#error").html(str).removeClass("defaultHidden");
+				setTimeout(function(){$("#error").addClass("defaultHidden");},3000);
+			}
+		</script>
+	</body>
+</html>
