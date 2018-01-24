@@ -17,7 +17,7 @@ html {
 	position: fixed;
 	z-index: 1;
 	top: 52px;
-	left: 0; 
+	left: 0;
 	overflow-x: hidden;
 	text-align: left;
     background: #F9F3F4;
@@ -27,4 +27,19 @@ html {
 	padding-top: 10px;
 	margin-top:  0;
 	padding-left: 15px;
+}
+
+.defaultHidden{
+	display:none;
+	visibility:hidden;
+}
+
+.togglePanel {
+    margin-left: 300px;
+    padding: 10px;
+}
+
+.togglePanel input {
+    display: block;
+    width: 200px;
 }

@@ -1,4 +1,3 @@
-
 function viewContact(id){
     jQuery.ajax({
         url: '/API/viewContact.php',
@@ -13,7 +12,7 @@ function viewContact(id){
 				$("#emailRO").html(obj.email);
 
 				if($("#contactDisplay").is(":hidden")){
-					$("section").toggleClass("defaultHidden");
+					$(".togglePanel").toggleClass("defaultHidden");
 				}
 			} else {
 				showError("viewContact API call fail whaled :(");
@@ -26,6 +25,7 @@ function addContact(){
 	var name=$("#nameW").val();
 	var phone=$("#phoneW").val();
 	var email=$("#emailW").val();
+	$('#contactAdd .userInput').val("");
     jQuery.ajax({
         url: '/API/addContact.php',
         type: "POST",
@@ -39,9 +39,10 @@ function addContact(){
 				$("#emailRO").html(obj.email);
 
 				if($("#contactDisplay").is(":hidden")){
-					$("section").toggleClass("defaultHidden");
+					$(".togglePanel").toggleClass("defaultHidden");
 				}
-				$("#contactList div").last().after('<div id="' & obj.id & '" class="contact">'& obj.name & "</div>");
+				$("#contactList button").last().after('<button id="' + obj.id + '" type="button" class="list-group-item contact">' + obj.name + "</button>");
+				$("#"+obj.id).on("click",function(){viewContact(this.id);});
 			}
 			else {
 				showError("addContact API call fail whaled :(");
@@ -61,7 +62,7 @@ function deleteContact(id){
 			if(resp!="fail whale :("){
 				var obj = $.parseJSON(resp);
 				$("#"+obj.id).remove();
-				$("section").toggleClass("defaultHidden");
+				$(".togglePanel").toggleClass("defaultHidden");
 			} else {
 				showError("deleteContact API call fail whaled :(");
 			}
