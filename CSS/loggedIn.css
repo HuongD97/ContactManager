@@ -147,6 +147,6 @@ html {
 }
 
 .togglePanel input {
-    display: block;
+    display: inline-block;
     width: 200px;
 }
