@@ -28,3 +28,96 @@ html {
 	margin-top:  0;
 	padding-left: 15px;
 }
+
+/*button .glyphicon-trash {
+	float: right;
+	opacity: 0.5;
+}
+
+button .glyphicon-trash{
+  visibility: hidden;
+}
+
+button:hover .glyphicon-trash{
+  cursor:pointer;
+  visibility: visible;
+  opacity: 1.0;
+}*/
+
+.addContactInfo {
+	height: 94%;
+	width: 78%;
+	position: fixed;
+	top: 52px;
+	left: 300px;
+	display: table;
+	padding: none;
+}
+
+.addContactInfo .inner {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	max-width: none;
+}
+
+.addContactInfoDiv {
+	opacity: 0.8;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 25px;
+    background: #F9F3F4;
+    padding: 10px; 
+    width: 500px;
+    height: 260px;
+}
+
+.addContactInfoDiv h1{
+	font-family: 'Raleway', sans-serif;
+	color: #515151;
+	font-size: 300%;
+	text-shadow: 0px 0px 300px #000;
+}
+
+.firstNameBox {
+	width: 200px;
+	height: 25px;
+	margin: 10px;
+	font-size: 100%;
+}
+
+.lastNameBox {
+	width: 200px;
+	height: 25px;
+	margin: 10px;
+	font-size: 100%;
+}
+
+.phoneNumberBox {
+	width: 200px;
+	height: 25px;
+	margin: 10px;
+	font-size: 100%;
+}
+
+.emailBox {
+	width: 200px;
+	height: 25px;
+	margin: 10px;
+	font-size: 100%;
+}
+
+.addContactButton {
+	border-radius: 9px;
+	border: none;
+	font-family: 'Oswald', sans-serif;
+	background: #515151;
+	color: #F9F3F4;
+	font-size: 100%;
+	text-decoration: none;
+	position: relative;
+	padding: 5px;
+	margin-top: 15px;
+	width: 100px;
+}
