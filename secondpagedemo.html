@@ -52,8 +52,10 @@
 			$("#contactToggleAdd").on("click",function(){$("section").toggleClass("defaultHidden");});
 			// When you click 'Delete Contact', remove the contact from the active page
 			$("#contactDeleteSubmit").on("click",function(){deleteContact($("#contactDisplay").attr("data-cid"))});
+			// When you click 'Save Contact', add the contact and display its info
+			$("#contactAddSubmit").on("click",function(){addContact()});
 
-			// Helper function for showing errors. This will likely change.
+			// Helper function for showing errors.
 			function showError(str){
 				$("#error").html(str).removeClass("defaultHidden");
 				setTimeout(function(){$("#error").addClass("defaultHidden");},3000);
