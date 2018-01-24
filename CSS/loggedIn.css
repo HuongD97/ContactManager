@@ -17,7 +17,7 @@ html {
 	position: fixed;
 	z-index: 1;
 	top: 52px;
-	left: 0; 
+	left: 0;
 	overflow-x: hidden;
 	text-align: left;
     background: #F9F3F4;
@@ -28,21 +28,6 @@ html {
 	margin-top:  0;
 	padding-left: 15px;
 }
-
-/*button .glyphicon-trash {
-	float: right;
-	opacity: 0.5;
-}
-
-button .glyphicon-trash{
-  visibility: hidden;
-}
-
-button:hover .glyphicon-trash{
-  cursor:pointer;
-  visibility: visible;
-  opacity: 1.0;
-}*/
 
 .addContactInfo {
 	height: 94%;
@@ -120,4 +105,19 @@ button:hover .glyphicon-trash{
 	padding: 5px;
 	margin-top: 15px;
 	width: 100px;
+}
+
+.defaultHidden{
+	display:none;
+	visibility:hidden;
+}
+
+.togglePanel {
+    margin-left: 300px;
+    padding: 10px;
+}
+
+.togglePanel input {
+    display: block;
+    width: 200px;
 }
