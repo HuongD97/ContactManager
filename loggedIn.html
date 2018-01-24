@@ -55,7 +55,7 @@
 				  <button id="3465" type="button" class="list-group-item contact">Vestibulum eros</button>
 					</div>
 		</div>
-
+<!--
 		<div id="error" class="defaultHidden"></div>
 		<div id="contactDisplay" class="togglePanel defaultHidden">
 			<div id="nameRO" class="ROfield"></div>
@@ -68,17 +68,17 @@
 			<input id="emailW" class="userInput" type="email" placeholder="Email"></input>
 			<input id="contactSubmit" type="button" value="Save Contact"></input>
 		</div>
-
-	<section class="addContactInfo">
+ -->
+	<section class="addContactInfo" class ="togglePanel">
 		<div class="inner">
 			<div id="addContactInfoDiv" class="addContactInfoDiv">
 				<h1>Add Contact</h1>
 				<form>
-					<input type="text" class="firstNameBox" placeholder="First Name">
-					<input type="text" class="lastNameBox" placeholder="Last Name">
-					<input type="text" class="phoneNumberBox" placeholder="Phone Number">
-					<input type="text" class="emailBox" placeholder="Email">
-					<button id="addContactButton" type="button" class="addContactButton" onclick="doAddContact();"> Add Contact </button>
+					<input id="nameWF" type="text" class="firstNameBox" placeholder="First Name">
+					<input id="nameWL" type="text" class="lastNameBox" placeholder="Last Name">
+					<input id="phoneW" type="text" class="phoneNumberBox" placeholder="Phone Number">
+					<input id="emailW" type="text" class="emailBox" placeholder="Email">
+					<button id="addContactButton" type="button" class="addContactButton"> Add Contact </button>
 				</form>
 			</div>
 		</div>
@@ -105,7 +105,7 @@
 				}
 			});
 			// When you click 'Save Contact', add the contact and display its info
-			$("#contactSubmit").on("click",function(){addContact()});
+			$("addContactButton").on("click",function(){addContact()});
 
 			// Helper function for showing errors.
 			function showError(str){

@@ -22,19 +22,21 @@ function viewContact(id){
 }
 
 function addContact(){
-	var name=$("#nameW").val();
+	var nameF=$("#nameWF").val();
+    var nameL=$("#nameWL").val();
 	var phone=$("#phoneW").val();
 	var email=$("#emailW").val();
 	$('#contactAdd .userInput').val("");
     jQuery.ajax({
         url: '/API/addContact.php',
         type: "POST",
-        data: {name:name, phone:phone, email:email},
+        data: {nameF:nameF, nameL:nameL, phone:phone, email:email},
 		success: function(resp){
 			if(resp!="fail whale :("){
 				var obj = $.parseJSON(resp);
 				$("#contactDisplay").attr("data-cid",obj.id);
-				$("#nameRO").html(obj.name);
+				$("#nameFRO").html(obj.nameF);
+                $("#nameLRO").html(obj.nameL);
 				$("#phoneRO").html(obj.phone);
 				$("#emailRO").html(obj.email);
 
