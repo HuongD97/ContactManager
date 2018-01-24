@@ -5,7 +5,7 @@
     echo "fail whale :(";
 
   // Establishing database connection
-  $conn = new mysqli(servername, username, password, databasename);
+  $conn = new mysqli("localhost", "SaRcc", "Wash9Lives!", "COP4331");
 
   // By this point, do I have to verify the correct
   // User table that I should be looking at?
@@ -14,7 +14,7 @@
     echo "fail whale :(";
   }
   else {
-    $sql = "INSERT INTO Contact(nameF, nameL, HomePh, Email) VALUES(";
+    $sql = "INSERT INTO Contact(FName, LName, CellPh, Email) VALUES(";
     $sql = $sql."'".mysqli_real_escape_string($_POST['nameF'])."', ";
     $sql = $sql."'".mysqli_real_escape_string($_POST['nameL'])."', ";
     $sql = $sql."'".mysqli_real_escape_string($_POST['phone'])."', ";
@@ -26,7 +26,7 @@
     }
     else
     {
-      echo '{"id":"'.rand(0000,9999).'","nameF":"'.$_POST['nameF'].'","nameL":"'.$_POST['nameF'].'","phone":"'.$_POST['phone'].'","email":"'.$_POST['email'].'"}';
+      echo '{"id":"'.rand(0000,9999).'","nameF":"'.$_POST['nameF'].'","nameL":"'.$_POST['nameL'].'","phone":"'.$_POST['phone'].'","email":"'.$_POST['email'].'"}';
     }
 
     $conn->close();
