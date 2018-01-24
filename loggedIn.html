@@ -4,7 +4,7 @@
 		<title>Contact Manager: Your Contacts</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/loggedIn.css" rel="stylesheet">
-		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<!-- 		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 	</head>
 	<body>
 
@@ -49,10 +49,10 @@
 					<h2>My Contacts</h2>
 					<div id="contactList" class="list-group">
 					  <button id="6543" type="button" class="list-group-item contact">Cras odio</button>
-				  <button id="6353" type="button" class="list-group-item contact">Dapibus facilisis in</button>
-				  <button id="3532" type="button" class="list-group-item contact">Morbi risus</button>
-				  <button id="2345" type="button" class="list-group-item contact">Porta consectetur ac</button>
-				  <button id="3465" type="button" class="list-group-item contact">Vestibulum eros</button>
+					  <button id="6353" type="button" class="list-group-item contact">Dapibus facilisis in</button>
+					  <button id="3532" type="button" class="list-group-item contact">Morbi risus</button>
+					  <button id="2345" type="button" class="list-group-item contact">Porta consectetur ac</button>
+					  <button id="3465" type="button" class="list-group-item contact">Vestibulum eros</button>
 					</div>
 		</div>
 <!--
@@ -72,8 +72,8 @@
 
  <!-- 	<div id="error" class="defaultHidden"></div> -->
 	<section id="contactDisplay" class="displayContactInfo" class ="togglePanel defaultHidden">
-		<div class="inner defaultHidden">
-			<div id="displayContactInfoDiv" class="displayContactInfoDiv defaultHidden">
+		<div class="inner defaultHidden togglePanel">
+			<div id="displayContactInfoDiv" class="displayContactInfoDiv defaultHidden togglePanel">
 				<div id="nameFRO" class="ROfield"></div>
 				<div id="nameLRO" class="ROfield"></div>
 				<div id="phoneRO" class="ROfield"></div>
@@ -83,15 +83,16 @@
 	</section>
 
 	<section class="addContactInfo" class ="togglePanel">
-		<div class="inner">
-			<div id="addContactInfoDiv" class="addContactInfoDiv">
+		<div class="inner togglePanel">
+			<div id="addContactInfoDiv" class="addContactInfoDiv togglePanel">
 				<h1>Add Contact</h1>
 				<form>
 					<input id="nameWF" type="text" class="firstNameBox" placeholder="First Name">
 					<input id="nameWL" type="text" class="lastNameBox" placeholder="Last Name">
 					<input id="phoneW" type="text" class="phoneNumberBox" placeholder="Phone Number">
 					<input id="emailW" type="text" class="emailBox" placeholder="Email">
-					<button id="addContactButton" type="button" class="addContactButton"> Add Contact </button>
+					<input class="addContactButton" type="submit" value="Add Contact">
+					<!-- <button id="addContactButton" type="button" class="addContactButton"> Add Contact </button> -->
 				</form>
 			</div>
 		</div>
@@ -101,7 +102,7 @@
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="/API/APIfront.js"></script>
+		<script src="API/APIfront.js"></script>
 
 		<!-- Scripts will be moved off into their own js file -->
 		<script>

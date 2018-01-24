@@ -47,12 +47,15 @@
 		<section class="loginPage">
 			<div class="inner">
 				<div id="loginDiv" class="loginDiv">
-					<h1>Login</h1>
-					<input id="username" class="usernameBox" type="text" placeholder=" Username" required> <br />
-					<input id="password" class="passwordBox" type="password" placeholder=" Password" required> <br />
-					<button id="loginButton" type="button" class="buttons" onclick="doLogin();"> Login </button>
-					<h3>New member? <a href="signUp.html"><strong>Sign Up</strong></a></h3>
-					<span id="loginResult"></span>
+					<form method="post" action="verifySignIn.php">
+						<h1>Login</h1>
+						<input id="username" class="usernameBox" type="text" placeholder=" Username" name="username" required> <br />
+						<input id="password" class="passwordBox" type="password" placeholder=" Password" name="password" required> <br />
+						<input class="buttons" type="submit" value="Login">
+<!-- 						<button id="loginButton" type="button" class="buttons"> Login </button> -->
+						<h3>New member? <a href="signUp.html"><strong>Sign Up</strong></a></h3>
+<!-- 						<span id="loginResult"></span> -->
+					</form>
 				</div>
 			</div>
 		</section>
