@@ -1,12 +1,9 @@
-
-
 <?php
+	include "header.php";
+
 	// Store username and password from form submission
 	$user =  $_POST["username"];
 	$pass = $_POST["password"];
-
-	// Create connection
-	$conn = new mysqli("localhost", "SaRcc", "Wash9Lives!", "COP4331");
 
 	// Check for error in connection
 	if ($conn->connect_error)
@@ -33,9 +30,9 @@
 
 			// Successful login, now have the uID primary key that needs to be passed
 			// to the loggedIn page to be used
-			header("Location: /loggedIn.html");
-			$conn->close();
-			die();
+			header("Location: /loggedIn.php");
+			//$conn->close();
+			//die();
 		}
 
 		// If the query failed, the log in information was invalid

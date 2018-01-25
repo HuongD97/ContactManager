@@ -4,7 +4,7 @@
 		<title>Contact Manager: Your Contacts</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/loggedIn.css" rel="stylesheet">
-<!-- 		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+<!-- 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 	</head>
 	<body>
 
@@ -71,9 +71,9 @@
  -->
 
  <!-- 	<div id="error" class="defaultHidden"></div> -->
-	<section id="contactDisplay" class="displayContactInfo" class ="togglePanel defaultHidden">
-		<div class="inner defaultHidden togglePanel">
-			<div id="displayContactInfoDiv" class="displayContactInfoDiv defaultHidden togglePanel">
+	<section id="contactDisplay" class="ContactInfo togglePanel defaultHidden">
+		<div class="inner">
+			<div id="displayContactInfoDiv" class="ContactInfoDiv">
 				<div id="nameFRO" class="ROfield"></div>
 				<div id="nameLRO" class="ROfield"></div>
 				<div id="phoneRO" class="ROfield"></div>
@@ -82,16 +82,16 @@
 		</div>
 	</section>
 
-	<section class="addContactInfo" class ="togglePanel">
-		<div class="inner togglePanel">
-			<div id="addContactInfoDiv" class="addContactInfoDiv togglePanel">
+	<section id="addContactInfo" class="ContactInfo togglePanel">
+		<div class="inner">
+			<div id="addContactInfoDiv" class="ContactInfoDiv">
 				<h1>Add Contact</h1>
-				<form>
-					<input id="nameWF" type="text" class="firstNameBox" placeholder="First Name"> <input id="nameWL" type="text" class="lastNameBox" placeholder="Last Name">
-					<input id="phoneW" type="text" class="phoneNumberBox" placeholder="Phone Number"> <input id="emailW" type="text" class="emailBox" placeholder="Email">
-					<input class="addContactButton" type="submit" value="Add Contact">
+					<input id="nameWF" type="text" class="firstNameBox" placeholder="First Name">
+					<input id="nameWL" type="text" class="lastNameBox" placeholder="Last Name">
+					<input id="phoneW" type="text" class="phoneNumberBox" placeholder="Phone Number">
+					<input id="emailW" type="text" class="emailBox" placeholder="Email">
+					<input class="addContactButton" type="button" value="Add Contact">
 					<!-- <button id="addContactButton" type="button" class="addContactButton"> Add Contact </button> -->
-				</form>
 			</div>
 		</div>
 	</section>
@@ -119,7 +119,7 @@
 				}
 			});
 			// When you click 'Save Contact', add the contact and display its info
-			$("addContactButton").on("click",function(){addContact()});
+			$(".addContactButton").on("click",function(){addContact()});
 
 			// Helper function for showing errors.
 			function showError(str){

@@ -28,8 +28,8 @@ html {
 	margin-top:  0;
 	padding-left: 15px;
 }
-
-.addContactInfo {
+/*
+.ContactInfo {
 	height: 94%;
 	width: 78%;
 	position: fixed;
@@ -39,26 +39,26 @@ html {
 	padding: none;
 }
 
-.addContactInfo .inner {
+.ContactInfo .inner {
 	display: table-cell;
 	vertical-align: middle;
 	width: 100%;
 	max-width: none;
 }
-
-.addContactInfoDiv {
+*/
+.ContactInfoDiv {
 	opacity: 0.8;
 	max-width: 500px;
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 25px;
     background: #F9F3F4;
-    padding: 10px; 
+    padding: 10px;
     width: 500px;
     height: 260px;
 }
 
-.addContactInfoDiv h1{
+.ContactInfoDiv h1{
 	font-family: 'Raleway', sans-serif;
 	color: #515151;
 	font-size: 300%;
@@ -106,7 +106,7 @@ html {
 	margin-top: 15px;
 	width: 100px;
 }
-
+/*
 .displayContactInfo {
 	height: 94%;
 	width: 78%;
@@ -131,11 +131,11 @@ html {
 	text-align: center;
 	border-radius: 25px;
     background: #F9F3F4;
-    padding: 10px; 
+    padding: 10px;
     width: 500px;
     height: 260px;
 }
-
+*/
 .defaultHidden{
 	display:none;
 	visibility:hidden;

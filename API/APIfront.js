@@ -1,13 +1,14 @@
-function viewContact(id){
+function viewContact(UserID, id){
     jQuery.ajax({
         url: '/API/viewContact.php',
         type: "GET",
-        data: {id:id},
+        data: {UserID:UserID, id:id},
         success: function(resp){
 			if(resp!="fail whale :("){
 				var obj = $.parseJSON(resp);
 				$("#contactDisplay").attr("data-cid",obj.id);
-				$("#nameRO").html(obj.name);
+				$("#nameFRO").html(obj.nameF);
+				$("#nameLRO").html(obj.nameL);
 				$("#phoneRO").html(obj.phone);
 				$("#emailRO").html(obj.email);
 
@@ -21,7 +22,7 @@ function viewContact(id){
     });
 }
 
-function addContact(){
+function addContact(UserID){
 	var nameF=$("#nameWF").val();
     var nameL=$("#nameWL").val();
 	var phone=$("#phoneW").val();
@@ -30,7 +31,7 @@ function addContact(){
     jQuery.ajax({
         url: '/API/addContact.php',
         type: "POST",
-        data: {nameF:nameF, nameL:nameL, phone:phone, email:email},
+        data: {UserID:UserID, nameF:nameF, nameL:nameL, phone:phone, email:email},
 		success: function(resp){
 			if(resp!="fail whale :("){
 				var obj = $.parseJSON(resp);
@@ -43,7 +44,7 @@ function addContact(){
 				if($("#contactDisplay").is(":hidden")){
 					$(".togglePanel").toggleClass("defaultHidden");
 				}
-				$("#contactList button").last().after('<button id="' + obj.id + '" type="button" class="list-group-item contact">' + obj.name + "</button>");
+				$("#contactList button").last().after('<button id="' + obj.id + '" type="button" class="list-group-item contact">' + obj.nameF + " " + obj.nameL + "</button>");
 				$("#"+obj.id).on("click",function(){viewContact(this.id);});
 			}
 			else {
