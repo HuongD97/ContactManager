@@ -27,10 +27,10 @@
       // The user logged in can indeed access this contact
       if ($matchID['uID'] == $_SESSION['userID'])
       {
-        $sql = "DELETE FROM Contact WHERE cID =".$cID;
+        $sql = "DELETE FROM contact WHERE cID =".$cID;
         if ($conn->query($sql) == TRUE)
         {
-          echo "Record deleted successfully.";
+          // echo "Record deleted successfully.";
           echo '{"id":"'.cID.'"}';
         }
         else

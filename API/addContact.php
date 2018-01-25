@@ -1,6 +1,6 @@
 <?php
 	include "../header.php";
-	
+
 	//global $conn;
   // Verify that the user has entered a first, last, phone, and email
   if (!(isset($_POST['UserID']) && isset($_POST['nameF']) && isset($_POST['nameL']) && isset($_POST['phone']) && isset($_POST['email'])))
@@ -15,7 +15,7 @@
 
     // Create a long query string to add the given contact into Contact table
     // Still need userID associated with this given contact.
-    $sql = "INSERT INTO Contact(FName, LName, CellPh, Email, User_UserID) VALUES(";
+    $sql = "INSERT INTO contact(FName, LName, CellPh, Email, User_UserID) VALUES(";
     $sql = $sql."'".mysqli_real_escape_string($conn, $_POST['nameF'])."', ";
     $sql = $sql."'".mysqli_real_escape_string($conn, $_POST['nameL'])."', ";
     $sql = $sql."'".mysqli_real_escape_string($conn, $_POST['phone'])."', ";
