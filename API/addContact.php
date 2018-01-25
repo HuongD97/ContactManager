@@ -1,5 +1,6 @@
 <?php
 	include "../header.php";
+	
 	//global $conn;
   // Verify that the user has entered a first, last, phone, and email
   if (!(isset($_POST['UserID']) && isset($_POST['nameF']) && isset($_POST['nameL']) && isset($_POST['phone']) && isset($_POST['email'])))
