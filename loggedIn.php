@@ -85,10 +85,10 @@
 		<div class="inner">
 			<div id="addContactInfoDiv" class="ContactInfoDiv">
 				<h1>Add Contact</h1>
-					<input id="nameWF" type="text" class="firstNameBox" placeholder="First Name">
-					<input id="nameWL" type="text" class="lastNameBox" placeholder="Last Name">
-					<input id="phoneW" type="text" class="phoneNumberBox" placeholder="Phone Number">
-					<input id="emailW" type="text" class="emailBox" placeholder="Email">
+					<input id="nameWF" type="text" class="firstNameBox userInput" placeholder="First Name">
+					<input id="nameWL" type="text" class="lastNameBox userInput" placeholder="Last Name">
+					<input id="phoneW" type="text" class="phoneNumberBox userInput" placeholder="Phone Number">
+					<input id="emailW" type="text" class="emailBox userInput" placeholder="Email">
 					<input class="addContactButton" type="button" value="Add Contact">
 					<!-- <button id="addContactButton" type="button" class="addContactButton"> Add Contact </button> -->
 			</div>
@@ -107,13 +107,13 @@
 			$(".contact").on("click",function(){viewContact(<?=$_SESSION['UserID']?>,this.id);});
 			// When you click 'Add A New Contact', show the add contact section
 			$("#AddContact").on("click",function(){
-				if($("#contactAdd").is(":hidden")){
+				if($("#addContactInfo").is(":hidden")){
 					$(".togglePanel").toggleClass("defaultHidden");
 				}
 			});
 			// When you click 'Delete Contact', remove the contact from the active page
 			$("#DeleteContact").on("click",function(){
-				if($("#contactAdd").is(":hidden")){
+				if($("#addContactInfo").is(":hidden")){
 					deleteContact($("#contactDisplay").attr("data-cid"))
 				}
 			});

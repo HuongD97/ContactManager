@@ -1,6 +1,5 @@
 <?php
 	include "../header.php";
-
 	//global $conn;
   // Verify that the user has entered a first, last, phone, and email
   if (!(isset($_POST['UserID']) && isset($_POST['nameF']) && isset($_POST['nameL']) && isset($_POST['phone']) && isset($_POST['email'])))
@@ -34,6 +33,7 @@
       $myJsonString = $myJsonString.'","nameL":"'.$_POST['nameL'];
       $myJsonString = $myJsonString.'","phone":"'.$_POST['phone'];
       $myJsonString = $myJsonString.'","email":"'.$_POST['email'];
+	  $myJsonString = $myJsonString.'","UserID":"'.$_POST['UserID'];
       $myJsonString = $myJsonString.$end;
 
       echo $myJsonString;

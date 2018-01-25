@@ -27,7 +27,7 @@ function addContact(UserID){
     var nameL=$("#nameWL").val();
 	var phone=$("#phoneW").val();
 	var email=$("#emailW").val();
-	$('#contactAdd .userInput').val("");
+	$('#addContactInfoDiv .userInput').val("");
     jQuery.ajax({
         url: '/API/addContact.php',
         type: "POST",
@@ -45,7 +45,7 @@ function addContact(UserID){
 					$(".togglePanel").toggleClass("defaultHidden");
 				}
 				$("#contactList button").last().after('<button id="' + obj.id + '" type="button" class="list-group-item contact">' + obj.nameF + " " + obj.nameL + "</button>");
-				$("#"+obj.id).on("click",function(){viewContact(this.id);});
+				$("#"+obj.id).on("click",function(){viewContact(obj.UserID, this.id);});
 			}
 			else {
 				showError("addContact API call fail whaled :(");
