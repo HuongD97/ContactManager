@@ -31,6 +31,7 @@
         if ($conn->query($sql) == TRUE)
         {
           echo "Record deleted successfully.";
+          echo '{"id":"'.cID.'"}';
         }
         else
         {
