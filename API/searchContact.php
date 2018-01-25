@@ -38,7 +38,7 @@
       for ($i = 0; $i < $numResults - 1; $i++)
         $retString = $retString.'"'.$arrayResults[$i].'", ';
 
-      $retString = $retString.'"'.$arrayREsults[$numResults - 1].'"}';
+      $retString = $retString.'"'.$arrayREsults[$numResults - 1].'"]}';
 
       echo $retString;
     }

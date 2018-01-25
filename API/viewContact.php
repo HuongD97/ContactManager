@@ -32,8 +32,9 @@
         $retString = $retString.'"nameL":"'.$row['LName'].'", ';
         $retString = $retString.'"phone":"'.$row['CellPh'].'", ';
         $retString = $retString.'"email":"'.$row['Email'].'"}';
-
       }
+
+      echo $retString;
     }
     else
     {
