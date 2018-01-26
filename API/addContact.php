@@ -23,12 +23,12 @@
 
     if ($result = $conn->query($sql) != TRUE)
     {
-      echo $sql;
+      echo "fail whale :(";
     }
     else
     {
       $end = '"}';
-      $myJsonString = '{"id":"'.rand(0000,9999);
+      $myJsonString = '{"id":"'.mysqli_insert_id($conn);
       $myJsonString = $myJsonString.'","nameF":"'.$_POST['nameF'];
       $myJsonString = $myJsonString.'","nameL":"'.$_POST['nameL'];
       $myJsonString = $myJsonString.'","phone":"'.$_POST['phone'];

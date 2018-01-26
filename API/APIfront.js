@@ -56,11 +56,11 @@ function addContact(UserID){
 
 //PHP Does not easily support accessing PUT and DELETE data.
 //We opted to forego these RESTful verbs for cleaner PHP code on the back end.
-function deleteContact(id){
+function deleteContact(UserID, id){
     jQuery.ajax({
         url: '/API/deleteContact.php',
         type: "POST",
-        data: {id:id},
+        data: {UserID:UserID, id:id},
         success: function(resp){
 			if(resp!="fail whale :("){
 				var obj = $.parseJSON(resp);
@@ -73,6 +73,21 @@ function deleteContact(id){
     });
 }
 
-function searchContact(){}
+function searchContact(UserID, searchTerm){
+	jQuery.ajax({
+        url: '/API/searchContact.php',
+        type: "GET",
+        data: {UserID:UserID, searchTerm:searchTerm},
+		success: function(resp){
+			if(resp!="fail whale :("){
+				var obj = $.parseJSON(resp);
+				$('.contact').hide();
+				for(var i=0; i < obj.length; i++){
+					$('#'+obj[i].cid).show();
+				}
+			}
+		}
+	});
+}
 
 //add to 2nd page once written <script src="/API/APIfront.js"></script>

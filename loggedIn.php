@@ -1,4 +1,8 @@
-<?php include "header.php";?><!DOCTYPE html>
+<?php include "header.php";
+	if(!isset($_SESSION['UserID'])){
+		header("location: /");
+	}
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Contact Manager: Your Contacts</title>
@@ -25,9 +29,9 @@
 
 		      <form class="navbar-form navbar-left">
 		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
+		          <input id="searchBox" type="text" class="form-control" placeholder="Search">
 		        </div>
-		        <button type="submit" class="btn btn-default">Search</button>
+		        <button id="searchButton" type="button" class="btn btn-default">Search</button>
 		      </form>
 
 		      <ul class="nav navbar-nav navbar-left">
@@ -47,29 +51,20 @@
 		<div id="myContacts" class="myContacts">
 					<h2>My Contacts</h2>
 					<div id="contactList" class="list-group">
-					  <button id="6543" type="button" class="list-group-item contact">Cras odio</button>
-					  <button id="6353" type="button" class="list-group-item contact">Dapibus facilisis in</button>
-					  <button id="3532" type="button" class="list-group-item contact">Morbi risus</button>
-					  <button id="2345" type="button" class="list-group-item contact">Porta consectetur ac</button>
-					  <button id="3465" type="button" class="list-group-item contact">Vestibulum eros</button>
+					<?php
+						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0)
+					    {
+							while($row = mysqli_fetch_assoc($result)){
+								echo '<button id="' . $row['contactID'] . '" type="button" class="list-group-item contact">' . $row['FName'] . ' ' . $row['LName'] . '</button>';
+							}
+						}
+					?>
 					</div>
 		</div>
-<!--
-		<div id="error" class="defaultHidden"></div>
-		<div id="contactDisplay" class="togglePanel defaultHidden">
-			<div id="nameRO" class="ROfield"></div>
-			<div id="phoneRO" class="ROfield"></div>
-			<div id="emailRO" class="ROfield"></div>
-		</div>
-		<div id="contactAdd" class="togglePanel">
-			<input id="nameW" class="userInput" type="text" placeholder="Name"></input>
-			<input id="phoneW" class="userInput" type="phone" placeholder="Phone Number"></input>
-			<input id="emailW" class="userInput" type="email" placeholder="Email"></input>
-			<input id="contactSubmit" type="button" value="Save Contact"></input>
-		</div>
- -->
 
- <!-- 	<div id="error" class="defaultHidden"></div> -->
 	<section id="contactDisplay" class="ContactInfo togglePanel defaultHidden">
 		<div class="inner">
 			<div id="displayContactInfoDiv" class="ContactInfoDiv">
@@ -95,8 +90,6 @@
 		</div>
 	</section>
 
-
-
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<script src="API/APIfront.js"></script>
@@ -114,11 +107,14 @@
 			// When you click 'Delete Contact', remove the contact from the active page
 			$("#DeleteContact").on("click",function(){
 				if($("#addContactInfo").is(":hidden")){
-					deleteContact($("#contactDisplay").attr("data-cid"))
+					deleteContact(<?=$_SESSION['UserID']?>,$("#contactDisplay").attr("data-cid"))
 				}
 			});
 			// When you click 'Save Contact', add the contact and display its info
 			$(".addContactButton").on("click",function(){addContact(<?=$_SESSION['UserID']?>)});
+
+			// When you click "search" it searches with what's in the box
+			$("#searchButton").on("click",function(){searchContact(<?=$_SESSION['UserID']?>, $("#searchBox").val())});
 
 			// Helper function for showing errors.
 			function showError(str){

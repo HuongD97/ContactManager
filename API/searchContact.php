@@ -1,49 +1,35 @@
 <?php
   include "../header.php";
 
-  if !((isset($_GET['id'])))
-    echo "fail whale :(";
+  if (!(isset($_GET['UserID']) && isset($_GET['searchTerm'])))
+    echo "1fail whale :(";
 
   if ($conn->connect_error)
   {
-    echo "fail whale :(";
+    echo "2fail whale :(";
     exit();
   }
   else
   {
-    $search = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM contact WHERE ";
-    $sql = $sql."('FName' LIKE '%".$search."%') OR ";
-    $sql = $sql."('LName' LIKE '%".$search."%') OR ";
-    $sql = $sql."('CellPh' LIKE '%".$search."%') OR ";
-    $sql = $sql."('Email' LIKE '%".$search."%')";
-
+    $search = mysqli_real_escape_string($conn, strtolower($_GET['searchTerm']));
+    $sql = "SELECT GROUP_CONCAT(contactID) as cIDs FROM contact WHERE User_UserID = ";
+	$sql = $sql.mysqli_real_escape_string($conn, $_GET['UserID']);
+    $sql = $sql." AND (LCASE(FName) LIKE '%".$search."%' OR ";
+    $sql = $sql."LCASE(LName) LIKE '%".$search."%' OR ";
+    $sql = $sql."LCASE(CellPh) LIKE '%".$search."%' OR ";
+    $sql = $sql."LCASE(Email) LIKE '%".$search."%')";
 
     $result = mysqli_query($conn, $sql);
 
+    // Store results in temporary array to be parsed later
+    // into a JSON formatted string
+    $result = mysqli_fetch_assoc($result);
 
-    if (mysqli_num_rows($result) > 0)
-    {
-      // Store results in temporary array to be parsed later
-      // into a JSON formatted string
-      $arrResults = array();
-
-      while ($row = mysqli_fetch_assoc($result))
-        array_push($arrayResults, $row['cID']);
-
-
-      $numResults = sizeof($arrayResults);
-
-      $retString = '{"arrResults": [';
-      for ($i = 0; $i < $numResults - 1; $i++)
-        $retString = $retString.'"'.$arrayResults[$i].'", ';
-
-      $retString = $retString.'"'.$arrayREsults[$numResults - 1].'"]}';
-
-      echo $retString;
+	if ($result['cIDs'] == ""){
+		echo '[]';
+	} else {
+		echo '[{"cid":'. str_replace(',','},{"cid":',$result['cIDs']) .'}]';
     }
-    else
-      echo "fail whale :(";
 
 
     mysqli_close($conn);

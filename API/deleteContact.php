@@ -1,8 +1,8 @@
 <?php
-  // $_SESSION["UserID"]
-  if (!(isset($_POST['id'])))
-    echo "fail whale :(";
+	include "../header.php";
 
+  	if (!(isset($_POST['id']) && isset($_POST['UserID'])))
+    	echo "fail whale :(";
 
   if ($conn->connect_error)
   {
@@ -16,7 +16,7 @@
 
     // Before deleting the contact ID, make sure that
     // the current user has access to that contact
-    $sql = "SELECT uID FROM Contact WHERE cID = ".$cID;
+    $sql = "SELECT User_UserID FROM contact WHERE contactID = ".$cID;
     $result = mysqli_query($conn, $sql);
 
 
@@ -25,13 +25,13 @@
       $matchID = mysqli_fetch_assoc($result);
 
       // The user logged in can indeed access this contact
-      if ($matchID['uID'] == $_SESSION['userID'])
+      if ($matchID['User_UserID'] == $_POST['UserID'])
       {
-        $sql = "DELETE FROM contact WHERE cID =".$cID;
+        $sql = "DELETE FROM contact WHERE contactID =".$cID;
         if ($conn->query($sql) == TRUE)
         {
           // echo "Record deleted successfully.";
-          echo '{"id":"'.cID.'"}';
+          echo '{"id":"'.$cID.'"}';
         }
         else
         {
