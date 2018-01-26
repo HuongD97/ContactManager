@@ -15,7 +15,7 @@
 	// Connection successful, verify login details
 	else
 	{
-		$loginQuery = "SELECT UserID FROM user WHERE username='" . $user . "'AND userPWHash='" . $pass . "'";
+		$loginQuery = "SELECT UserID FROM user WHERE username='" . $user . "'AND userPWHash='" . MD5($pass) . "'";
 
 		// Query database to retrieve the userID of an attempted login. This query
 		// will return false if the log in credentials don't match a user's data

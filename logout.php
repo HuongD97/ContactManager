@@ -3,5 +3,6 @@
 <?php
     session_start();
     unset($_SESSION["UserID"]);
-    header("Location: index.php");  
+    header("Location: index.php"); 
+    die();
 ?>
