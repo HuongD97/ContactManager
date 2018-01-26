@@ -1,4 +1,4 @@
-<?php require_once("api/switchContent.php"); ?>
+<?php require_once("API/switchContent.php");?>
 <section class="container homePageContainer">
 	<div class="row">
 		<div class="col-lg-12">

@@ -1,4 +1,4 @@
-<?php require_once("api/switchContent.php"); ?>
+<?php require_once("API/switchContent.php");?>
 <section class="signUpPage">
 	<div class="inner">
 		<div id="signUpDiv" class="signUpDiv">

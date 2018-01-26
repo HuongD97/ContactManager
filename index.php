@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/styles.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<?php require_once("api/switchContent.php"); ?>
+		<?php require_once("API/switchContent.php");?>
 	</head>
 	<body>
 
@@ -36,9 +36,9 @@
 		</nav>
 
 		<div id="content">
-			<?php include('home.php'); ?>
+			<?php include('home.php');?>
 		</div>
-		
+
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 

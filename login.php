@@ -1,4 +1,4 @@
-<?php require_once("api/switchContent.php"); ?>
+<?php require_once("API/switchContent.php");?>
 <section class="loginPage">
 	<div class="inner">
 		<div id="loginDiv" class="loginDiv">
