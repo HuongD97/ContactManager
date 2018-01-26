@@ -1,3 +1,4 @@
+<?php require_once("api/switchContent.php"); ?>
 <section class="signUpPage">
 	<div class="inner">
 		<div id="signUpDiv" class="signUpDiv">
@@ -9,7 +10,7 @@
 				<input id="password" class="passwordBox" type="password" placeholder=" Password" name="PWHash" required> <br />
 				<input id="password" class="passwordBox" type="password" placeholder=" Retype Password" name="PWHash2" required> <br />
 				<input type="submit" class="signUpButton" value="Sign Up">
-			<!-- 	<h3>Existing member? <a href="#" data-target="login"><strong>Login</strong></a></h3> -->
+				<h3>Existing member? <a href="#" data-target="login"><strong>Login</strong></a></h3>
 			</form>
 		</div>
 	</div>
