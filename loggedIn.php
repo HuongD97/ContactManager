@@ -41,7 +41,7 @@
 
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><p class="navbar-text">Signed in as Mark Otto</p></li>
-		        <button type="submit" class="btn btn-default navbar-btn">Sign Out</button>
+		        <button type="submit" class="btn btn-default navbar-btn"><a href="logout.php">Sign Out</a></button>
 		      </ul>
 
 		    </div><!-- /.navbar-collapse -->
