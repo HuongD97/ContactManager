@@ -5,43 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/styles.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function(){
-				var trigger = $('#bs-example-navbar-collapse-1 ul li a'),
-				// trigger2 = $('#loginDiv form h3 a'),
-				// trigger3 = $('#signUpDiv form h3 a'),
-				container = $('#content');
-
-				trigger.on('click', function(){
-					var $this = $(this)
-						target = $this.data('target');
-
-						container.load(target + '.php');
-
-						return false;
-				});
-
-				// tried getting multiple triggers to work
-				// trigger2.on('click', function(){
-				// 	var $this = $(this)
-				// 		target = $this.data('target');
-
-				// 		container.load(target + '.php');
-
-				// 		return false;
-				// });
-
-
-				// trigger3.on('click', function(){
-				// 	var $this = $(this)
-				// 		target = $this.data('target');
-
-				// 		container.load(target + '.php');
-
-				// 		return false;
-				// });
-			});
-		</script>
+		<?php require_once("API/switchContent.php");?>
 	</head>
 	<body>
 
@@ -55,7 +19,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Contact Manager</a>
+		      <a class="navbar-brand" href="#" data-target="home">Contact Manager</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,53 +36,8 @@
 		</nav>
 
 		<div id="content">
-			<?php include('home.php'); ?>
+			<?php include('home.php');?>
 		</div>
-
-		<!-- <section class="container homePageContainer">
-			<div class="row">
-				<div class="col-lg-12">
-					<div id="homePageContent" class="homePageContent">
-						<h1>Contact Manager</h1>
-						<h3>An easy way to manage all your contacts</h3>
-						<hr>
-						<button class="btn btn-default btn-lg" onclick="location.href='signUp.html'">Get Started!</button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="loginPage">
-			<div class="inner">
-				<div id="loginDiv" class="loginDiv">
-					<form method="post" action="verifySignIn.php">
-						<h1>Login</h1>
-						<input id="username" class="usernameBox" type="text" placeholder=" Username" name="username" required> <br />
-						<input id="password" class="passwordBox" type="password" placeholder=" Password" name="password" required> <br />
-						<input class="buttons" type="submit" value="Login">
-						<h3>New member? <a href="signUp.html"><strong>Sign Up</strong></a></h3>
-					</form>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="signUpPage">
-			<div class="inner">
-				<div id="signUpDiv" class="signUpDiv">
-					<form method="post" action="newUser.php">
-						<h1>Sign Up</h1>
-						<input id="firstname" class="usernameBox" type="text" placeholder=" First Name" name="FName" required> <br />
-						<input id="lastname" class="usernameBox" type="text" placeholder=" Last Name" name="LName" required> <br />
-						<input id="username" class="usernameBox" type="text" placeholder=" Username" name="username" required> <br />
-						<input id="password" class="passwordBox" type="password" placeholder=" Password" name="PWHash" required> <br />
-						<input id="password" class="passwordBox" type="password" placeholder=" Retype Password" name="PWHash2" required> <br />
-						<input type="submit" class="signUpButton" value="Sign Up">
-						<h3>Existing member? <a href="login.html"><strong>Login</strong></a></h3>
-					</form>
-				</div>
-			</div>
-		</section> -->
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
