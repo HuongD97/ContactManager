@@ -39,8 +39,30 @@
 		        <li><a id="DeleteContact" href="#">Delete Contact</a></li>
 		      </ul>
 
+<!--
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><p class="navbar-text">Signed in as Mark Otto</p></li>
+		        <button type="submit" class="btn btn-default navbar-btn"><a href="logout.php">Sign Out</a></button>
+		      </ul>
+-->
+			  <!-- Dynamically generate name to greet user -->
+			  <ul class="nav navbar-nav navbar-right">
+		        <?php
+				  // Find current user First and Last Name
+				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $_SESSION["UserID"] . "'";
+				  $Name = mysqli_query($conn, $NameQuery);
+				  
+				  if (mysqli_num_rows($Name) > 0)
+				  {
+					  $row = mysqli_fetch_assoc($Name);
+					  echo '<li><p class="navbar-text">Welcome, ' . $row['FName'] . " " . $row['LName'] . '!</p></li>';
+				  }
+				  // Just in case it doesn't work, default greeting
+				  else
+				  {
+					  echo '<li><p class="navbar-text">Welcome!</p></li>';
+				  }
+				?>
 		        <button type="submit" class="btn btn-default navbar-btn"><a href="logout.php">Sign Out</a></button>
 		      </ul>
 
