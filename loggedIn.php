@@ -49,14 +49,17 @@
 			  <ul class="nav navbar-nav navbar-right">
 		        <?php
 				  // Find current user First and Last Name
-				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $_SESSION["UserID"] . "'";
+				  // Try capturing session variable in regular variable?
+				  $thisUserID = $_SESSION['UserID'];
+				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $thisUserID . "'";
 				  $Name = mysqli_query($conn, $NameQuery);
-				  
+				  				  
 				  if (mysqli_num_rows($Name) > 0)
 				  {
 					  $row = mysqli_fetch_assoc($Name);
 					  echo '<li><p class="navbar-text">Welcome, ' . $row['FName'] . " " . $row['LName'] . '!</p></li>';
 				  }
+						
 				  // Just in case it doesn't work, default greeting
 				  else
 				  {
@@ -74,7 +77,8 @@
 					<h2>My Contacts</h2>
 					<div id="contactList" class="list-group">
 					<?php
-						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
+						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$thisUserID ." ORDER BY LName, Fname";
+//						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0)

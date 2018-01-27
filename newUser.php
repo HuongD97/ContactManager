@@ -13,7 +13,7 @@
 	// For now, if wrong, just redirect back to home...but should probably have a login error eventually
 	if($pass != $pass2) 
 	{
-		header("Location: /index.html");
+		header("Location: /index.php");
 		die();
 	}
 	// Check for error in connection
@@ -33,17 +33,21 @@
 		$sql = "INSERT INTO user(FName, LName, username, userPWHash) 
 					VALUES('" . $FName . "','". $LName . "','" . $username . "','" . $hashedPass . "')";
 		
-		echo "strSQL = " . $strSQL;
+		//echo "strSQL = " . $strSQL;
 		
-		if (!$conn->query($sql) === TRUE) 
+		if (!$conn->query($sql) == TRUE) 
 		{
     		echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 		
 		// Obtain UserID of newly created user
-		$userID = "SELECT UserID FROM user WHERE username='" . $username . "'AND userPWHash='" . $hashedPass . "'";
-
-		echo "userID = " . $userID;
+		$userIDQuery = "SELECT UserID FROM user WHERE username='" . $username . "'AND userPWHash='" . $hashedPass . "'";
+		
+		$userIDResult = $conn->query($userIDQuery);
+		$validID = $userIDResult->fetch_assoc();
+		$userID = $validID["UserID"];
+		
+		//echo "userID = " . $userID;
 		
 		// After user is created, redirect to loggedIn and set $_SESSION[UserID]
 		$_SESSION["UserID"] = $userID;
