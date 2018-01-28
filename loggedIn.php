@@ -71,7 +71,7 @@
 		</nav>
 
 		<div id="myContacts" class="myContacts">
-					<h2>My Contacts</h2>
+					<h2 class="pointy">My Contacts</h2>
 					<div id="contactList" class="list-group">
 					<button type="button" class="list-group-item contact defaultHidden"></button>
 					<?php
