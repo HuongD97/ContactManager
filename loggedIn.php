@@ -51,7 +51,7 @@
 				  // Find current user First and Last Name
 				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $_SESSION["UserID"] . "'";
 				  $Name = mysqli_query($conn, $NameQuery);
-				  
+
 				  if (mysqli_num_rows($Name) > 0)
 				  {
 					  $row = mysqli_fetch_assoc($Name);
@@ -73,6 +73,7 @@
 		<div id="myContacts" class="myContacts">
 					<h2>My Contacts</h2>
 					<div id="contactList" class="list-group">
+					<button type="button" class="list-group-item contact defaultHidden"></button>
 					<?php
 						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
 						$result = mysqli_query($conn, $sql);
