@@ -139,6 +139,8 @@
 			// When you click "search" it searches with what's in the box
 			$("#searchButton").on("click",function(){searchContact(<?=$_SESSION['UserID']?>, $("#searchBox").val())});
 
+			$('#myContacts h2').on("click",function(){$('#contactList button').not('.defaultHidden').show()});
+
 			// Helper function for showing errors.
 			function showError(str){
 				$("#error").html(str).removeClass("defaultHidden");
