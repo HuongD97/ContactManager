@@ -80,6 +80,7 @@ function searchContact(UserID, searchTerm){
         data: {UserID:UserID, searchTerm:searchTerm},
 		success: function(resp){
 			if(resp!="fail whale :("){
+				$('#searchBox').val("");
 				var obj = $.parseJSON(resp);
 				$('.contact').hide();
 				for(var i=0; i < obj.length; i++){

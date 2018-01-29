@@ -53,7 +53,11 @@
 				  $thisUserID = $_SESSION['UserID'];
 				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $thisUserID . "'";
 				  $Name = mysqli_query($conn, $NameQuery);
+<<<<<<< HEAD
 				  				  
+=======
+
+>>>>>>> cb27d724803c0b2fa3d70146105b7456fd8cf400
 				  if (mysqli_num_rows($Name) > 0)
 				  {
 					  $row = mysqli_fetch_assoc($Name);
@@ -74,8 +78,9 @@
 		</nav>
 
 		<div id="myContacts" class="myContacts">
-					<h2>My Contacts</h2>
+					<h2 class="pointy">My Contacts</h2>
 					<div id="contactList" class="list-group">
+					<button type="button" class="list-group-item contact defaultHidden"></button>
 					<?php
 						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$thisUserID ." ORDER BY LName, Fname";
 //						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
@@ -141,6 +146,8 @@
 
 			// When you click "search" it searches with what's in the box
 			$("#searchButton").on("click",function(){searchContact(<?=$_SESSION['UserID']?>, $("#searchBox").val())});
+
+			$('#myContacts h2').on("click",function(){$('#contactList button').not('.defaultHidden').show()});
 
 			// Helper function for showing errors.
 			function showError(str){
