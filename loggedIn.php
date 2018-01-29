@@ -53,11 +53,7 @@
 				  $thisUserID = $_SESSION['UserID'];
 				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $thisUserID . "'";
 				  $Name = mysqli_query($conn, $NameQuery);
-<<<<<<< HEAD
-				  				  
-=======
-
->>>>>>> cb27d724803c0b2fa3d70146105b7456fd8cf400
+				  
 				  if (mysqli_num_rows($Name) > 0)
 				  {
 					  $row = mysqli_fetch_assoc($Name);
