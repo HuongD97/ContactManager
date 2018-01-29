@@ -8,7 +8,6 @@
 		<title>Contact Manager: Your Contacts</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/loggedIn.css" rel="stylesheet">
-<!-- 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -39,12 +38,6 @@
 		        <li><a id="DeleteContact" href="#">Delete Contact</a></li>
 		      </ul>
 
-<!--
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><p class="navbar-text">Signed in as Mark Otto</p></li>
-		        <button type="submit" class="btn btn-default navbar-btn"><a href="logout.php">Sign Out</a></button>
-		      </ul>
--->
 			  <!-- Dynamically generate name to greet user -->
 			  <ul class="nav navbar-nav navbar-right">
 		        <?php
@@ -79,7 +72,6 @@
 					<button type="button" class="list-group-item contact defaultHidden"></button>
 					<?php
 						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$thisUserID ." ORDER BY LName, Fname";
-//						$sql = "SELECT contactID, FName, LName FROM contact WHERE User_UserID = ".$_SESSION['UserID'] ." ORDER BY LName, Fname";
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0)
@@ -92,36 +84,35 @@
 					</div>
 		</div>
 
-	<section id="contactDisplay" class="ContactInfo togglePanel defaultHidden">
-		<div class="inner">
-			<div id="displayContactInfoDiv" class="ContactInfoDiv">
-				<div id="nameFRO" class="ROfield"></div>
-				<div id="nameLRO" class="ROfield"></div>
-				<div id="phoneLabel">Phone: </div>
-				<div id="phoneRO" class="ROfield"></div>
-				<div id="emailLabel">Email: </div>
-				<div id="emailRO" class="ROfield"></div>
+		<section id="contactDisplay" class="ContactInfo togglePanel defaultHidden">
+			<div class="inner">
+				<div id="displayContactInfoDiv" class="ContactInfoDiv">
+					<div id="nameFRO" class="ROfield"></div>
+					<div id="nameLRO" class="ROfield"></div>
+					<div id="phoneLabel">Phone: </div>
+					<div id="phoneRO" class="ROfield"></div>
+					<div id="emailLabel">Email: </div>
+					<div id="emailRO" class="ROfield"></div>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section id="addContactInfo" class="ContactInfo togglePanel">
-		<div class="inner">
-			<div id="addContactInfoDiv" class="ContactInfoDiv">
-				<h1>Add Contact</h1>
-					<input id="nameWF" type="text" class="firstNameBox userInput" placeholder="First Name">
-					<input id="nameWL" type="text" class="lastNameBox userInput" placeholder="Last Name">
-					<input id="phoneW" type="text" class="phoneNumberBox userInput" placeholder="Phone Number">
-					<input id="emailW" type="text" class="emailBox userInput" placeholder="Email">
-					<input class="addContactButton" type="button" value="Add Contact">
-					<!-- <button id="addContactButton" type="button" class="addContactButton"> Add Contact </button> -->
+		<section id="addContactInfo" class="ContactInfo togglePanel">
+			<div class="inner">
+				<div id="addContactInfoDiv" class="ContactInfoDiv">
+					<h1>Add Contact</h1>
+						<input id="nameWF" type="text" class="firstNameBox userInput" placeholder="First Name">
+						<input id="nameWL" type="text" class="lastNameBox userInput" placeholder="Last Name">
+						<input id="phoneW" type="text" class="phoneNumberBox userInput" placeholder="Phone Number">
+						<input id="emailW" type="text" class="emailBox userInput" placeholder="Email">
+						<input class="addContactButton" type="button" value="Add Contact">
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="API/APIfront.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+			<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+			<script src="API/APIfront.js"></script>
 
 		<!-- Scripts will be moved off into their own js file -->
 		<script>
@@ -153,6 +144,5 @@
 				setTimeout(function(){$("#error").addClass("defaultHidden");},3000);
 			}
 		</script>
-
 	</body>
 </html>
