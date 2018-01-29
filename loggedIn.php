@@ -53,7 +53,7 @@
 				  $thisUserID = $_SESSION['UserID'];
 				  $NameQuery = "SELECT FName, LName FROM user WHERE UserID='" . $thisUserID . "'";
 				  $Name = mysqli_query($conn, $NameQuery);
-				  
+
 				  if (mysqli_num_rows($Name) > 0)
 				  {
 					  $row = mysqli_fetch_assoc($Name);
@@ -97,7 +97,9 @@
 			<div id="displayContactInfoDiv" class="ContactInfoDiv">
 				<div id="nameFRO" class="ROfield"></div>
 				<div id="nameLRO" class="ROfield"></div>
+				<div id="phoneLabel">Phone: </div>
 				<div id="phoneRO" class="ROfield"></div>
+				<div id="emailLabel">Email: </div>
 				<div id="emailRO" class="ROfield"></div>
 			</div>
 		</div>

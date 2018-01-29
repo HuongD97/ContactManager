@@ -154,3 +154,57 @@ html {
 .pointy {
 	cursor:pointer;
 }
+
+.ContactInfoDiv #nameFRO {
+	font-family: 'Raleway', sans-serif;
+	color: #515151;
+	font-size: 300%;
+	display: inline-block;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.ContactInfoDiv #nameLRO {
+	font-family: 'Raleway', sans-serif;
+	color: #515151;
+	font-size: 300%;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.ContactInfoDiv #phoneLabel {
+	font-family: 'Raleway', sans-serif;
+	background-color: #8c8c8c;
+	color: #F9F3F4;
+	font-size: 120%;
+	display: block;
+	margin: 10px;
+	border-radius: 25px;
+}
+
+.ContactInfoDiv #phoneRO {
+	font-family: sans-serif;
+	color: #515151;
+	font-size: 120%;
+	display: block;
+	margin: 10px;
+}
+
+.ContactInfoDiv #emailLabel {
+	font-family: 'Raleway', sans-serif;
+	background-color: #8c8c8c;
+	color: #F9F3F4;
+	font-size: 120%;
+	display: block;
+	margin: 10px;
+	border-radius: 25px;
+}
+
+.ContactInfoDiv #emailRO {
+	font-family: sans-serif;
+	color: #515151;
+	font-size: 120%;
+	display: block;
+	margin: 10px;
+}
