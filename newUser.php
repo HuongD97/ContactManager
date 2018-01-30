@@ -10,20 +10,37 @@
     $pass2 = $_POST["PWHash2"];
 	
 	// Check if passwords are equal
-	// For now, if wrong, just redirect back to home...but should probably have a login error eventually
+	// If wrong,  redirect back to home
 	if($pass != $pass2) 
 	{
 		header("Location: /index.php");
 		die();
-	}
+	}	
+	
 	// Check for error in connection
 	if ($conn->connect_error)
 	{
 		// Handle connection error
 		echo $conn->connect_error . "fail whale";
 	}
+	
+	// Connection successful
+	
+	// Check if account already exists for this user. 
+	// If so, redirect back to sign in page
+	$sql = "SELECT username FROM user WHERE username = '". $username . "'";
+	$usernameCheck = mysqli_query($conn, $sql);
+	
+	if (mysqli_num_rows($usernameCheck) > 0)
+	{
+		// Invalid - Username exists in table already, go to Login
+		header("Location: /login.html");
+		echo "Username already exists!";
+		die();
+	}
 
-	// Connection successful, insert new user
+
+	// Valid username, insert new user
 	else
 	{
 		// Make hashed version of password using MD5
@@ -32,9 +49,7 @@
 		// Make sql query string
 		$sql = "INSERT INTO user(FName, LName, username, userPWHash) 
 					VALUES('" . $FName . "','". $LName . "','" . $username . "','" . $hashedPass . "')";
-		
-		//echo "strSQL = " . $strSQL;
-		
+				
 		if (!$conn->query($sql) == TRUE) 
 		{
     		echo "Error: " . $sql . "<br>" . $conn->error;
